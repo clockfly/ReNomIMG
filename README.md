@@ -27,7 +27,7 @@ The Wheel package is provided at:
 
 You can install the wheel package with pip3 command::
 
-`pip3 install https://grid-devs.gitlab.io/ReNomIMG/bin/renom_img-1.0.8-cp36-cp36m-linux_x86_64.whl`
+`pip3 install https://grid-devs.gitlab.io/ReNomIMG/bin/renom_img-1.0.9-cp36-cp36m-linux_x86_64.whl`
 
 ## Install from source
 For installing ReNomIMG, download the repository from following url.
