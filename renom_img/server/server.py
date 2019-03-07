@@ -21,7 +21,6 @@ import numpy as np
 from concurrent.futures import ThreadPoolExecutor as Executor
 from concurrent.futures import ProcessPoolExecutor
 from concurrent.futures import CancelledError
-from signal import signal, SIGPIPE, SIG_DFL, SIG_IGN
 from bottle import HTTPResponse, default_app, route, static_file, request, error
 
 from renom.cuda import release_mem_pool
@@ -527,10 +526,10 @@ def load_dataset_split_detail():
         start_t = time.time()
 
         parsed_train, train_class_map = parse_xml_detection([str(path) for path in xmldir.iterdir() if str(
-            path).split('/')[-1].split('.')[0] in parsed_train_img_names], num_thread=8)
+            path).split(os.sep)[-1].split('.')[0] in parsed_train_img_names], num_thread=8)
 
         parsed_valid, valid_class_map = parse_xml_detection([str(path) for path in xmldir.iterdir() if str(
-            path).split('/')[-1].split('.')[0] in parsed_valid_img_names], num_thread=8)
+            path).split(os.sep)[-1].split('.')[0] in parsed_valid_img_names], num_thread=8)
 
         start_t = time.time()
         # Insert detailed informations
